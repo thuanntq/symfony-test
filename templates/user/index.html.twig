@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    User List
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-8">
+            <h1>User List</h1>
+        </div>
+        <div class="col-4 text-right">
+            <a href="{{ path('users.create') }}" class="btn btn-secondary">Create new</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">User</th>
+            <th scope="col" class="text-center">Gender</th>
+            <th scope="col" class="text-center">Status</th>
+            <th scope="col" class="text-right">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>
+                Mark
+                <br/>
+                <small>
+                    <a href="javascript:;">Otto@gmail.com</a>
+                </small>
+            </td>
+            <td class="text-center">MALE</td>
+            <td class="text-center">
+                <span class="badge badge-danger">Deactivate</span>
+            </td>
+            <td class="text-right">
+                <a href="{{ path('users.detail', {'id': 1}) }}" class="btn btn-outline-secondary btn-sm">View</a>
+                <a href="{{ path('users.edit', {'id': 1}) }}" class="btn btn-outline-primary btn-sm">Edit</a>
+                <a href="{{ path('users.delete', {'id': 1}) }}" class="btn btn-outline-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>
+                Jacob
+                <br/>
+                <small>
+                    <a href="javascript:;">thornton@gmail.com</a>
+                </small>
+            </td>
+            <td class="text-center">FEMALE</td>
+            <td class="text-center">
+                <span class="badge badge-info">Activate</span>
+            </td>
+            <td class="text-right">
+                <a href="{{ path('users.detail', {'id': 1}) }}" class="btn btn-outline-secondary btn-sm">View</a>
+                <a href="{{ path('users.edit', {'id': 1}) }}" class="btn btn-outline-primary btn-sm">Edit</a>
+                <a href="{{ path('users.delete', {'id': 1}) }}" class="btn btn-outline-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>
+                Larry
+                <br/>
+                <small>
+                    <a href="javascript:;">the_bird@gmail.com</a>
+                </small>
+            </td>
+
+            <td class="text-center">OTHER</td>
+            <td class="text-center">
+                <span class="badge badge-danger">Deactivate</span>
+            </td>
+            <td class="text-right">
+                <a href="{{ path('users.detail', {'id': 1}) }}" class="btn btn-outline-secondary btn-sm">View</a>
+                <a href="{{ path('users.edit', {'id': 1}) }}" class="btn btn-outline-primary btn-sm">Edit</a>
+                <a href="{{ path('users.delete', {'id': 1}) }}" class="btn btn-outline-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        #myDiv {
+            color: red;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        (function () {
+            console.log('initial page');
+        })();
+    </script>
+{% endblock %}

@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>{% block title %}Symfony!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ absolute_url(asset('/assets/css/bootstrap.min.css')) }}"/>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<div class="container pt-5">
+    {% block body %}{% endblock %}
+</div>
+
+<script src="{{ absolute_url(asset('/assets/js/jquery-3.4.1.slim.min.js')) }}"></script>
+<script src="{{ absolute_url(asset('/assets/js/popper.min.js')) }}"></script>
+<script src="{{ absolute_url(asset('/assets/js/bootstrap.min.js')) }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
 </html>
