@@ -10,6 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
+    const
+        GENDER_MALE = 1,
+        GENDER_FEMALE = 2,
+        GENDER_OTHER = 3;
+    const
+        STATUS_ACTIVATE = 1,
+        STATUS_DEACTIVATE = 2;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -40,11 +47,11 @@ class User
     /**
      * @ORM\Column(type="boolean")
      */
-    private $gender;
+    private $gender; # 1: male, 2: female, 3: other
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
-    private $status = 1;
+    private $status = 1; # 1: activate, 2: deactivate
 
     /**
      * @return int|null
